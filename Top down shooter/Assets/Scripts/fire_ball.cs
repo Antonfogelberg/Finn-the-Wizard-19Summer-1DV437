@@ -7,11 +7,11 @@ public class fire_ball : MonoBehaviour
 
     public float speed;
     public float lifeTime;
-
+    public GameObject explosion;
 
     void Start()
     {
-        Destroy(gameObject, lifeTime);
+        Invoke("DestroyProjectile", lifeTime);
         
     }
 
@@ -19,5 +19,11 @@ public class fire_ball : MonoBehaviour
     {
         transform.Translate(Vector2.up * speed * Time.deltaTime);
         
+    }
+
+    void DestroyProjectile()
+    {
+        Instantiate(explosion, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }
