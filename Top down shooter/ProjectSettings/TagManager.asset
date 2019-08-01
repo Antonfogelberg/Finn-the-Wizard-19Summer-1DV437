@@ -8,6 +8,8 @@ TagManager:
   - Weapon
   - firestaff
   - greenstaff
+  - patrolPoint
+  - boss
   layers:
   - Default
   - TransparentFX
@@ -20,7 +22,7 @@ TagManager:
   - Player
   - Enemy
   - Stopper
-  - 
+  - boss
   - 
   - 
   - 

@@ -746,7 +746,7 @@ GameObject:
   - component: {fileID: 7153871123639672253}
   - component: {fileID: 7153871123639672254}
   m_Layer: 9
-  m_Name: MeleeEnemy 1
+  m_Name: MeleeEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -855,9 +855,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   player: {fileID: 0}
+  pickUpChance: 10
+  pickups:
+  - {fileID: 5955094975841443836, guid: adc082170714dc840a988c764112acb4, type: 3}
   speed: 10
   damage: 1
   timeBetweenAttacks: 5
+  deathEffect: {fileID: 2157533984282457506, guid: d398de9196e35334cb66a1130ea20fdf,
+    type: 3}
   stopDistance: 2
   attackSpeed: 8
 --- !u!1 &427221092459957502
