@@ -332,7 +332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2dfd5cce7809d94f8366ffb99d3e5e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
+  health: 40
   enemies:
   - {fileID: 7153871123639672254, guid: 08f71afe43ac9024c9a5f17fa4f0e3fa, type: 3}
   - {fileID: 2661062953479215864, guid: b57e200f5a9886047990f4507c4bcbca, type: 3}
@@ -340,6 +340,8 @@ MonoBehaviour:
   - {fileID: 5194046977761504959, guid: da79eb7a047222b4496a729d1a39374b, type: 3}
   spawnOffset: 2
   damage: 1
+  deathEffect: {fileID: 3543986218559345237, guid: 622e2bae697710c4fb9a04511806d116,
+    type: 3}
 --- !u!61 &2686286121851402913
 BoxCollider2D:
   m_ObjectHideFlags: 0

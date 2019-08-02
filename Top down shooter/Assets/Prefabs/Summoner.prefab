@@ -772,7 +772,6 @@ MonoBehaviour:
   pickUpChance: 70
   pickups:
   - {fileID: 3443418375527656921, guid: a3aaefd20d5ee414183b9c738595d807, type: 3}
-  - {fileID: 5955094975841443836, guid: adc082170714dc840a988c764112acb4, type: 3}
   speed: 20
   damage: 1
   timeBetweenAttacks: 2

@@ -22,6 +22,8 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 moveAmount;
     private Animator anim;
+
+    public Animator hurtAnim;
    
     private void Start()
     {
@@ -64,6 +66,8 @@ public class Player : MonoBehaviour
     {
         health -= damageAmount;
         UpdateHealthUI(health);
+
+        hurtAnim.SetTrigger("hurt");
 
         if (health <= 0)
         {
