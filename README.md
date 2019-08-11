@@ -13,8 +13,10 @@ https://freesound.org/people/DuffyBro/sounds/319107/
 Links
 -----
 
-- [RStudio Devtools](http://www.rstudio.com/products/rpackages/devtools/)
-- [Testthat](https://github.com/hadley/testthat)
-- [Tests][1]
+- [Bubble pop](https://freesound.org/people/B_Sean/sounds/421886/)
+- [Green staff](https://freesound.org/people/josepharaoh99/sounds/368175/)
+- [Fire impact](https://freesound.org/people/HighPixel/sounds/431174/)
+- [Fire staff](https://freesound.org/people/LiamG_SFX/sounds/334234/)
+- [Background music](https://freesound.org/people/B_Sean/sounds/421886/)
 
 [1]: http://r-pkgs.had.co.nz/tests.html
