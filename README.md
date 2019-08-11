@@ -1,4 +1,4 @@
-# Speldesign
+# Finn the Wizard
 
 For the course 19Summer-1DV437 at Linnéuniversitetet
 
