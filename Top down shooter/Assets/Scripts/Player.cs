@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     private float swapTime;
     public bool greenStaff;
     public Transform holdPos;
+    public bool currentWeapon; // To stop being able to spam the number keys in order to double shoot. Ugly fix
 
     public Image[] hearts;
     public Sprite fullHeart;
@@ -32,6 +33,7 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         sceneTransitions = FindObjectOfType<SceneTransitions>();
+        currentWeapon = true;
     }
 
     private void Update()
@@ -93,16 +95,24 @@ public class Player : MonoBehaviour
     // Ugly weapon swap system ?
     public void swapFire()
     {
-        Destroy(GameObject.FindGameObjectWithTag("Weapon"));
-        Instantiate(fire_staff, holdPos.position, transform.rotation, transform);
-        swapTime = Time.time + swapCD;
+        if (!currentWeapon)
+        {
+            Destroy(GameObject.FindGameObjectWithTag("Weapon"));
+            Instantiate(fire_staff, holdPos.position, transform.rotation, transform);
+            swapTime = Time.time + swapCD;
+            currentWeapon = true;
+        } 
 
     }
     public void swapGreen()
     {
-        Destroy(GameObject.FindGameObjectWithTag("Weapon"));
-        Instantiate(green_staff, holdPos.position, transform.rotation, transform);
-        swapTime = Time.time + swapCD;
+        if(currentWeapon)
+        {
+            Destroy(GameObject.FindGameObjectWithTag("Weapon"));
+            Instantiate(green_staff, holdPos.position, transform.rotation, transform);
+            swapTime = Time.time + swapCD;
+            currentWeapon = false;
+        }
     }
 
 
@@ -110,6 +120,7 @@ public class Player : MonoBehaviour
     public void greenStaffPickedUp()
     {
         greenStaff = true;
+        currentWeapon = false;
     }
 
 
