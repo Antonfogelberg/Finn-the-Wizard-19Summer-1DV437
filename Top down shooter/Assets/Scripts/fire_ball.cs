@@ -9,10 +9,12 @@ public class fire_ball : MonoBehaviour
     public float lifeTime;
     public GameObject explosion;
     public int damage;
+    public GameObject soundObject;
 
     void Start()
     {
         Invoke("DestroyProjectile", lifeTime);
+        Instantiate(soundObject, transform.position, transform.rotation);
         
     }
 

@@ -99,7 +99,9 @@ MonoBehaviour:
   lifeTime: 5
   explosion: {fileID: 876324930662437838, guid: 13c45cc013b828c46a088b09b8e3cf8b,
     type: 3}
-  damage: 3
+  damage: 5
+  soundObject: {fileID: 243344774954750789, guid: 3fb58cd4cc1e563438b2a9ea8dc95e1a,
+    type: 3}
 --- !u!58 &7417912340918411806
 CircleCollider2D:
   m_ObjectHideFlags: 0

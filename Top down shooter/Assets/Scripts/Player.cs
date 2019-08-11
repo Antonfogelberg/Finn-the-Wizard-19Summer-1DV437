@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 moveAmount;
     private Animator anim;
+    private SceneTransitions sceneTransitions;
 
     public Animator hurtAnim;
    
@@ -29,6 +31,7 @@ public class Player : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        sceneTransitions = FindObjectOfType<SceneTransitions>();
     }
 
     private void Update()
@@ -56,6 +59,7 @@ public class Player : MonoBehaviour
         {
             swapGreen();
         }
+       
     }
 
     private void FixedUpdate()
@@ -72,6 +76,7 @@ public class Player : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+            sceneTransitions.LoadScene("Lose");
         }
     }
 

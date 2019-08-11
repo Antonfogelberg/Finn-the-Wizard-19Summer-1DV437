@@ -38,13 +38,16 @@ public class FlyingEnemy : Enemy
 
     public void RangedAttack()
     {
-        Vector2 direction = player.position - shotPoint.position;
-       float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        if (player != null) {
+            Vector2 direction = player.position - shotPoint.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-        Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
-        shotPoint.rotation = rotation;
+            Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+            shotPoint.rotation = rotation;
 
-        Instantiate(enemyBullet, shotPoint.position, shotPoint.rotation);
+            Instantiate(enemyBullet, shotPoint.position, shotPoint.rotation);
+        }
+            
 
 
     }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Boss : MonoBehaviour
 {
@@ -10,9 +11,11 @@ public class Boss : MonoBehaviour
     public float spawnOffset;
     public int damage;
     public GameObject deathEffect;
+    private Slider healthBar;
 
     private int halfHealth;
     private Animator anim;
+    private SceneTransitions sceneTransitions;
 
     
 
@@ -20,7 +23,10 @@ public class Boss : MonoBehaviour
     {
         halfHealth = health / 2;
         anim = GetComponent<Animator>();
-        
+        healthBar = FindObjectOfType<Slider>();
+        healthBar.maxValue = health;
+        healthBar.value = health;
+        sceneTransitions = FindObjectOfType<SceneTransitions>();
 
 
 
@@ -29,11 +35,14 @@ public class Boss : MonoBehaviour
     public void TakeDamage(int damageAmount)
     {
         health -= damageAmount;
+        healthBar.value = health;
 
         if (health <= 0)
         {
             Instantiate(deathEffect, transform.position, transform.rotation);
             Destroy(gameObject);
+            healthBar.gameObject.SetActive(false);
+            sceneTransitions.LoadScene("Win");
         }
 
         if (health <= halfHealth)
